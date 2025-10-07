@@ -4,13 +4,20 @@
 
 package com.mycompany.animales;
 
-/**
- *
- * @author andre
- */
-public class Animal {
+public abstract class Animal {
+    private final String nombre;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    protected Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() { return nombre; }
+
+
+    public abstract String hacerSonido();
+
+
+    public String describirAnimal() {
+        return getClass().getSimpleName() + " '" + nombre + "' hace: " + hacerSonido();
     }
 }
